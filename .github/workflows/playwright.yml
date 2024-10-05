@@ -4,6 +4,12 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+  workflow_dispatch: # Isso habilita o disparo manual via API
+    inputs:
+      some_input:
+        description: "Descrição do input (se aplicável)"
+        required: false
+        default: "valor padrão"
 jobs:
   test:
     timeout-minutes: 60
